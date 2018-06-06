@@ -1,0 +1,32 @@
+<form class="cd-form" (ngSubmit)="login()" #f="ngForm" novalidate>
+    <div class="fieldset">
+        <label class="image-replace cd-email" for="signin-email">E-mail</label>
+        <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail" name="email" ngModel #email="ngModel" required email>
+        <div *ngIf="email.errors && email.touched">
+            <span *ngIf="email.errors.required" class="redItalic">Email required.</span>
+            <span *ngIf="!email.errors.required && email.errors.email" class="redItalic">Email not valid.</span>
+        </div>
+    </div>
+    <div class="fieldset">
+        <label class="image-replace cd-password" for="signin-password">Password</label>
+        <input class="full-width has-padding has-border" id="signin-password" type="password" placeholder="Password" name="password" ngModel #password="ngModel" required minlength="6" maxlength="15" />
+        <div *ngIf="password.errors && password.touched">
+            <span *ngIf="password.errors.required" class="redItalic">Password required.</span>
+            <span *ngIf="!password.errors.required && (password.errors.minlength || password.errors.maxlength)" class="redItalic">Password length must be in between of 6 and 15.</span>
+        </div>
+    </div>
+    <div class="fieldset">
+        <input type="checkbox" id="remember-me" checked>
+        <label for="remember-me">Remember me</label>
+    </div>
+    <div class="fieldset">
+        <button type="submit" [disabled]="loading || !f.valid" value="Login" class="btn btn-blue btn-effect">Login</button>
+    </div>
+    <div class="fieldset">
+        <button class="btn btn-blue btn-effect" [disabled]="loading" (click)="login('facebook')">Facebook Login</button>
+    </div>
+    <div class="fieldset">
+        <button class="btn btn-blue btn-effect" [disabled]="loading" (click)="login('google')">Google Login</button>
+    </div>
+    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+</form>

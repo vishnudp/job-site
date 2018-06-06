@@ -1,0 +1,74 @@
+<div class="col-md-10 col-sm-6 col-xs-4 nopadding">
+    <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle toggle-menu menu-right push-body" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <!-- Start of Main Nav -->
+    <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="main-nav">
+        <ul class="nav navbar-nav pull-right">
+
+            <!-- Mobile Menu Title -->
+            <li class="mobile-title">
+                <h4>main menu</h4></li>
+
+            <!-- Simple Menu Item -->
+            <li class="dropdown simple-menu" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="" class="dropdown-toggle" data-toggle="dropdown" role="button">home</a>
+                <!-- <ul class="dropdown-menu" role="menu">
+                    <li><a href="index.html">home 1</a></li>
+                    <li><a href="index-02.html">home 2 - slider</a></li>
+                    <li><a href="index-03.html">home 3</a></li>
+                    <li><a href="index-04.html">boxed version</a></li>
+                </ul> -->
+            </li>
+            <li class="dropdown simple-menu" routerLinkActive="active">
+                <a routerLink="/about-us" class="dropdown-toggle" data-toggle="dropdown" role="button">About US</a>
+            </li>
+            <li class="dropdown simple-menu" routerLinkActive="active">
+                <a routerLink="/privacy-policy" class="dropdown-toggle" data-toggle="dropdown" role="button">Privacy Policy</a>
+            </li>
+            <li class="dropdown simple-menu" routerLinkActive="active">
+                <a routerLink="/terms-condition" class="dropdown-toggle" data-toggle="dropdown" role="button">Terms & Condition</a>
+            </li>
+            <li class="dropdown simple-menu" routerLinkActive="active">
+                <a routerLink="/contact-us" class="dropdown-toggle" data-toggle="dropdown" role="button">Contact US</a>
+            </li>
+            <li class="menu-item login-btn">
+                <a id="modal_trigger" href="javascript:void(0)" role="button"><i class="fa fa-lock"></i>login</a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- End of Main Nav -->
+</div>
+
+<!-- ===== Start of Login Pop Up div ===== -->
+<div class="cd-user-modal">
+    <!-- this is the entire modal form, including the background -->
+    <div class="cd-user-modal-container">
+        <!-- this is the container wrapper -->
+        <ul class="cd-switcher">
+            <li><a href="#0">Sign in</a></li>
+            <li><a href="#1">New account</a></li>
+        </ul>
+
+        <div id="cd-login">
+            <!-- log in form -->
+            <app-login></app-login>
+        </div>
+        <!-- cd-login -->
+
+        <div id="cd-signup">
+            <!-- sign up form -->
+            <app-signup></app-signup>
+        </div>
+        <!-- cd-signup -->
+    </div>
+    <!-- cd-user-modal-container -->
+</div>
+<!-- cd-user-modal -->

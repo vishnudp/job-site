@@ -1,0 +1,31 @@
+<!-- Start of Single Job Post 5 -->
+<div class="single-job-post row nomargin">
+    <!-- Job Company -->
+    <div class="col-md-2 col-xs-3 nopadding">
+        <div class="job-company">
+            <a routerLink="company-page">
+                <img [src]="'assets/images/companies/'+item.img_src" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- Job Title & Info -->
+    <div class="col-md-8 col-xs-6 ptb20">
+        <div class="job-title">
+            <a routerLink="job-page" >{{item.job_title}}</a>
+        </div>
+
+        <div class="job-info">
+            <span class="company"><i class="fa fa-building-o"></i>{{item.company_name}}</span>
+            <span class="location"><i class="fa fa-map-marker"></i>{{item.location}}</span>
+        </div>
+    </div>
+
+    <!-- Job Category -->
+    <div class="col-md-2 col-xs-3 ptb30">
+        <div class="job-category">
+            <a href="javascript:void(0)" class="btn btn-red btn-small btn-effect">{{item.job_type}}</a>
+        </div>
+    </div>
+</div>
+<!-- End of Single Job Post 5 -->
