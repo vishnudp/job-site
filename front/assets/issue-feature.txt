@@ -1,0 +1,9 @@
+1. Login COmponent  (Done)
+2. Signup Component  (Done)
+3. Job page  (Done)
+4. Submit Resume
+
+
+Popular Categories Issue (margin related)
+Sponsor Issue (Done)
+Map in job-page component

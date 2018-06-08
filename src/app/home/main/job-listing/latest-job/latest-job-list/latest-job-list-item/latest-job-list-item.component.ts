@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./latest-job-list-item.component.css']
 })
 export class LatestJobListItemComponent implements OnInit {
-  @Input() item : {};
+  @Input() item : any;
   constructor() { }
 
   ngOnInit() {

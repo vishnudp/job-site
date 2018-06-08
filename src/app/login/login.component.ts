@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(socialPlatform) {
+  login(socialPlatform?) {
   	this.loading = true;
   	let socialPlatformProvider;
   	if (socialPlatform) {
