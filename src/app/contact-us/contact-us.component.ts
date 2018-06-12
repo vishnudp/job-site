@@ -31,7 +31,7 @@ export class ContactUsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    for(const sub of this.subscriberArr) sub.unsunscribe();
+    for(const sub of this.subscriberArr) sub.unsubscribe();
   }
 
 }
