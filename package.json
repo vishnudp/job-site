@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test": "ng test",
+    "test": "ng build --prod && git add . && git commit -m 'Commit by npm test command' && git pull && git push",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

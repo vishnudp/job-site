@@ -5,7 +5,7 @@
         <!-- Start of Page Title -->
         <div class="row">
             <div class="col-md-12">
-                <h2>contact us ver. 1</h2>
+                <h2>{{page_content?.page_title}}</h2>
             </div>
         </div>
         <!-- End of Page Title -->
@@ -35,7 +35,8 @@
         <div class="row">
 
             <div class="col-md-6 col-xs-12">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <div  [innerHtml]="page_content?.page_description"></div>
+                <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
 
                 <!-- Start of Contact Form -->
                 <form id="contact-form" class="mt30">

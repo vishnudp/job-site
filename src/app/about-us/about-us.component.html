@@ -5,7 +5,7 @@
         <!-- Start of Page Title -->
         <div class="row">
             <div class="col-md-12">
-                <h2>about us</h2>
+                <h2>{{page_content?.page_title}}</h2>
             </div>
         </div>
         <!-- End of Page Title -->
@@ -35,9 +35,9 @@
         <div class="row">
 
             <!-- Start of First Column -->
-            <div class="col-md-6 col-xs-12">
-                <h3 class="text-blue">About Cariera</h3>
-                <p class="pt30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus at eros eu molestie. Aenean condimentum augue quam, et luctus lectus viverra at. Suspendisse finibus imperdiet sem, sed semper mi egestas in. Curabitur vitae eros hendrerit, egestas leo quis, feugiat risus. Aliquam venenatis lectus luctus ante gravida, ac volutpat orci lobortis. Fusce eget laoreet nisi.</p>
+            <div class="col-md-6 col-xs-12" [innerHtml]="page_content?.page_description">
+                <!-- <h3 class="text-blue">About Cariera</h3>
+                <p class="pt30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus at eros eu molestie. Aenean condimentum augue quam, et luctus lectus viverra at. Suspendisse finibus imperdiet sem, sed semper mi egestas in. Curabitur vitae eros hendrerit, egestas leo quis, feugiat risus. Aliquam venenatis lectus luctus ante gravida, ac volutpat orci lobortis. Fusce eget laoreet nisi.</p> -->
 
             </div>
             <!-- End of First Column -->
