@@ -31,7 +31,8 @@ function get_category() {
                     "category_id"              => $rows['category_id'],
                     "category_name"            => $rows['category_name'],
                     "category_image"     => $rows['category_image'],
-                    "category_slug"       => $rows['artist_category_slug']
+                    "category_description"     => $rows['category_description'],
+                    "category_slug"       => $rows['category_slug']
                     );
     }
     

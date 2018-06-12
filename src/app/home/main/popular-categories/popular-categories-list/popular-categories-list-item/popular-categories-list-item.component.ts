@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-popular-categories-list-item',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popular-categories-list-item.component.css']
 })
 export class PopularCategoriesListItemComponent implements OnInit {
-
+  @Input() category;
   constructor() { }
 
   ngOnInit() {

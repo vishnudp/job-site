@@ -1,3 +1,21 @@
-<p>
-  popular-categories-list-item works!
-</p>
+<div class="col-md-3 col-sm-6 col-xs-12 cat-wrapper pt40">
+    <div class="category ptb30">
+
+        <!-- Icon -->
+        <div class="category-icon">
+            <i class="fa" [ngClass]="category.category_image"></i>
+        </div>
+
+        <!-- Category Info - Title -->
+        <div class="category-info pt30">
+            <a href="#">{{category.category_name}}</a>
+            <p>(9 open positions)</p>
+        </div>
+
+        <!-- Category Description -->
+        <div class="category-descr">
+            <span>{{category.category_description}}</span>
+        </div>
+
+    </div>
+</div>
