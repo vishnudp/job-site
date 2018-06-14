@@ -30,8 +30,7 @@ function get_sponsor_data() {
         $data[] = array(
                     "sponser_id"              => $rows['sponser_id'],
                     "sponser_title"            => $rows['sponser_title'],
-                    "sponser_image"     => $rows['sponser_image'],
-                    "sponser_url"       => $rows['sponser_url']
+                    "sponser_url"       => $rows['sponser_url'].$rows['sponser_image']
                     );
     }
     
