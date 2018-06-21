@@ -36,8 +36,6 @@ import { UsefulLinksComponent } from './home/footer/useful-links/useful-links.co
 import { ContactComponent } from './home/footer/contact/contact.component';
 import { CopyrightComponent } from './home/footer/copyright/copyright.component';
 
-
-import { AppRouting } from './app.routing';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { MainComponent } from './home/main/main.component';
@@ -48,6 +46,13 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
 
+import { AppRouting } from './app.routing';
+
+
+/****
+  Services
+  ****/
+import { services } from './services/index';
 // Configs 
 export function getAuthServiceConfigs    () {
   let config = new AuthServiceConfig(
@@ -111,10 +116,13 @@ export function getAuthServiceConfigs    () {
     AppRouting,
     SocialLoginModule,
   ],
-  providers: [{
+  providers: [
+    {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs    
-    }],
+    },
+    ...services
+  ],
   bootstrap: [AppComponent],
   /*entryComponents: [LoginComponent]*/
 })
