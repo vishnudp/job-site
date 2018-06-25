@@ -28,8 +28,8 @@
       ],
       "scripts": [
         "assets/js/jquery-3.1.1.min.js",
-        "assets/js/bootstrap.min.js",
         "assets/js/bootstrap-select.min.js",
+        "assets/js/bootstrap.min.js",
         "assets/js/swiper.min.js",
         "assets/js/jquery.ajaxchimp.js",
         "assets/js/jquery.countTo.js",

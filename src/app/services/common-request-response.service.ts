@@ -67,9 +67,8 @@ export class CommonRequestResponseService {
   }
 
   mapData(response: Response) {
-    const data = response.json();
-    if (data) {
-      return data;
+    if (response) {
+      return response;
     }
   }
 

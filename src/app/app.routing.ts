@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { MainComponent } from './home/main/main.component';
-import { JobPageComponent } from './job-page/job-page.component';
-import { CompanyPageComponent } from './company-page/company-page.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { TermsConditionComponent } from './terms-condition/terms-condition.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HomeComponent } from './components/home/home.component';
+import { MainComponent } from './components/home/main/main.component';
+import { JobPageComponent } from './components/job-page/job-page.component';
+import { CompanyPageComponent } from './components/company-page/company-page.component';
+import { AboutUsComponent } from './components/static-pages/about-us/about-us.component';
+import { PrivacyPolicyComponent } from './components/static-pages/privacy-policy/privacy-policy.component';
+import { TermsConditionComponent } from './components/static-pages/terms-condition/terms-condition.component';
+import { ContactUsComponent } from './components/static-pages/contact-us/contact-us.component';
 
 
 let routes : Routes = [

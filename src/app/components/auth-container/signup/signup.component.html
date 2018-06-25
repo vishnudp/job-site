@@ -1,0 +1,142 @@
+<form class="cd-form" (ngSubmit)="signup()" #f="ngForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-username" for="signup-firstname">First name</label>
+                <input class="full-width has-padding has-border" id="signup-firstname" type="text" placeholder="First name" ngModel name="fName" pattern="[a-zA-Z][a-zA-Z ]+" minlength="3" maxlength="50" required>
+                <div *ngIf="f.controls.fName && f.controls.fName.errors && f.controls.fName.touched">
+                    <span *ngIf="f.controls.fName.errors.required" class="redItalic">First name required.</span>
+                    <span *ngIf="!f.controls.fName.errors.required && (f.controls.fName.errors.minlength || f.controls.fName.errors.maxlength)" class="redItalic">First name must be in between of 3 and 50.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-username" for="signup-lastname">Last name</label>
+                <input class="full-width has-padding has-border" id="signup-lastname" type="text" placeholder="Last name" name="lName" ngModel pattern="[a-zA-Z][a-zA-Z ]+" minlength="3" maxlength="50" required>
+                <div *ngIf="f.controls.lName && f.controls.lName.errors && f.controls.lName.touched">
+                    <span *ngIf="f.controls.lName.errors.required" class="redItalic">Last name required.</span>
+                    <span *ngIf="!f.controls.lName.errors.required && (f.controls.lName.errors.minlength || f.controls.lName.errors.maxlength)" class="redItalic">Last name must be in between of 3 and 50.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt20">
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-username">Gender</label>
+                    <input type="radio" value="male" name="gender" ngModel required> Male
+                    <input type="radio" value="female" name="gender" ngModel required> Female
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-username" for="dob">DOB</label>
+                <input class="full-width has-padding has-border" id="dob" type="date" placeholder="Last name" name="dob" ngModel required>
+                <div *ngIf="f.controls.dob && f.controls.dob.errors && f.controls.dob.touched">
+                    <span *ngIf="f.controls.dob.errors.required" class="redItalic">Please choose date of birth and should be valid.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt20">
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" name="email" ngModel required email />
+                <div *ngIf="f.controls.email && f.controls.email.errors && f.controls.email.touched">
+                    <span *ngIf="f.controls.email.errors.required" class="redItalic">Email required.</span>
+                    <span *ngIf="!f.controls.email.errors.required && f.controls.email.errors.email" class="redItalic">Email not valid.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-email" for="contactNo">Contact No</label>
+                <input class="full-width has-padding has-border" id="contactNo" type="tel" placeholder="Contact No" name="contactNo" ngModel required pattern="^(\([0-9]{3}\)|[0-9]{3}-)[0-9]{3}-[0-9]{4}$" />
+                <div *ngIf="f.controls.contactNo && f.controls.contactNo.errors && f.controls.contactNo.touched">
+                    <span *ngIf="f.controls.contactNo.errors.required" class="redItalic">Contact No required.</span>
+                    <span *ngIf="!f.controls.contactNo.errors.required && f.controls.contactNo.errors.pattern" class="redItalic">Invalid Contact Number, Contact Number should be like (123)123-1234</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt20">
+        <div class="col-md-6">
+            <div class="fieldset">
+                <select class="form-control" (change)="getStateData(f.value.countryId)" ngModel name="countryId" required>
+                  <option disabled=true value=''>Choose Country</option>
+                  <option *ngFor="let item of countryData" value="{{item?.country_id}}">{{item?.country_name}}</option>
+                </select>
+                <div *ngIf="f.controls.countryId && f.controls.countryId.errors && f.controls.countryId.touched">
+                    <span *ngIf="f.controls.countryId.errors.required" class="redItalic">Please Select country.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="fieldset">
+                <select class="form-control" id="state" ngModel name="stateId" required>
+                  <option disabled=true value=''>Choose State</option>
+                  <option *ngFor="let item of stateData" value="{{item?.state_id}}">{{item?.state_name}}</option>
+                </select>
+                <div *ngIf="f.controls.stateId && f.controls.stateId.errors && f.controls.stateId.touched">
+                    <span *ngIf="f.controls.stateId.errors.required" class="redItalic">Please Select state.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt20">
+        <div class="col-md-6">
+            <div class="fieldset">
+                <input type='text' class="full-width has-padding has-border" placeholder="City Name" ngModel name="city" pattern="^([a-zA-Z]+|[a-zA-Z]+\s[a-zA-Z]+)$" minlength="3" maxlength="50" required/>
+                <div *ngIf="f.controls.city && f.controls.city.errors && f.controls.city.touched">
+                    <span *ngIf="f.controls.city.errors.required" class="redItalic">City required.</span>
+                    <span *ngIf="!f.controls.city.errors.required && (f.controls.city.errors.minlength || f.controls.city.errors.maxlength)" class="redItalic">City name must be in between of 3 and 50.</span>
+                    <span *ngIf="!f.controls.city.errors.required && f.controls.city.errors.pattern" class="redItalic">City name must contains only alphanumeric.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="fieldset">
+                <input type='text' class="full-width has-padding has-border" placeholder="Postal code" ngModel name="zip" pattern="^[0-9]{6}$" required/>
+                <div *ngIf="f.controls.zip && f.controls.zip.errors && f.controls.zip.touched">
+                    <span *ngIf="f.controls.zip.errors.required" class="redItalic">Postal code required.</span>
+                    <span *ngIf="!f.controls.zip.errors.required && f.controls.zip.errors.pattern" class="redItalic">Postal code only contain 6 digits like (302021).</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt20">
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-password" for="signup-password">Password</label>
+                <input class="full-width has-padding has-border" id="signup-password" type="password" placeholder="Password" name="password" ngModel required minlength="6" maxlength="15" />
+                <div *ngIf="f.controls.password && f.controls.password.errors && f.controls.password.touched">
+                    <span *ngIf="f.controls.password.errors.required" class="redItalic">Password required.</span>
+                    <span *ngIf="!f.controls.password.errors.required && (f.controls.password.errors.minlength || f.controls.password.errors.maxlength)" class="redItalic">Password length must be in between of 6 and 15.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="fieldset">
+                <label class="image-replace cd-password" for="signup-cpassword">Confirm Password</label>
+                <input class="full-width has-padding has-border" id="signup-cpassword" type="password" placeholder="Confirm Password" name="cpassword" ngModel required minlength="6" maxlength="15" />
+                <div *ngIf="f.controls.cpassword && f.controls.cpassword.errors && f.controls.cpassword.touched">
+                    <span *ngIf="f.controls.cpassword.errors.required" class="redItalic">Confirm Password required.</span>
+                    <span *ngIf="!f.controls.cpassword.errors.required && (f.controls.cpassword.errors.minlength || f.controls.cpassword.errors.maxlength)" class="redItalic">Password length must be in between of 6 and 15.</span>
+                </div>
+                <div *ngIf="f.controls.cpassword && !f.controls.cpassword.errors && f.controls.cpassword.touched">
+                    <span *ngIf="f.value.password !== f.value.cpassword && f.controls.cpassword.dirty" class="redItalic">Password and confirm password must be same.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="fieldset">
+        <input type="checkbox" id="accept-terms" name="isTCAccepted" ngModel>
+        <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+    </div>
+    <div class="fieldset">
+        <button [disabled]="loading || !f.valid || !(f.value.password === f.value.cpassword) || !f.value.isTCAccepted" class="btn btn-blue btn-effect" type="submit" value="Create account">Create Account</button>
+    </div>
+</form>
