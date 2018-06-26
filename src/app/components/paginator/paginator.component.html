@@ -1,0 +1,7 @@
+<ul class="pagination list-inline text-center">
+	<li *ngIf="startPage > 4"><a href="javascript:void(0)" (click)="pre();changeFilter.next({offset:(selectedPage-1)*pageSize,pageSize: pageSize})">Pre</a></li>
+	<li *ngFor="let data of showPages" [ngClass]="{'active' : selectedPage == data}">
+	    <a href="javascript:void(0)" (click)="selectedPage = data;changeFilter.next({offset:(selectedPage-1)*pageSize,pageSize: pageSize})">{{data}}</a>
+	</li>
+	<li *ngIf="showNext"><a href="javascript:void(0)" (click)="next();changeFilter.next({offset:(selectedPage-1)*pageSize,pageSize: pageSize})">Next</a></li>
+</ul>

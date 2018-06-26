@@ -1,0 +1,28 @@
+Needy API
+1. Create Login and signup api - (LoginComponent, SignupComponent)
+	Login on behalf of token
+2. Search job on behalf of search filter value - LatestJobComponent
+3. Get company profile - CompanyPageComponent
+4. Get job detail - JobPageComponent
+5. Get Testimonial data - TestimonialsComponent
+6. Get privacy and policy data - PrivacyPolicyComponent
+7. Get Terms & Condition data - TermsConditionComponent
+8. Get golden job data - GoldenJobComponent
+9. Provide no of opening with api result - PopularCategoriesComponent
+10. Get popular post data - PopularPostsComponent
+11. Authentication Related work
+		-Store Header
+		-Pass Header with API
+
+
+Issues
+1. Submit Resume
+2. Map in job-page component
+3. Testimonial & Sponsor does not shown on routing change
+
+Completed
+1. Login COmponent  (Done)
+2. Signup Component  (Done)
+3. Job page  (Done)
+4. Sponsor Issue (Done)
+5. Popular Categories Issue (Done)

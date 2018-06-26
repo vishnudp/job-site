@@ -45,15 +45,19 @@ import { AboutUsComponent } from './components/static-pages/about-us/about-us.co
 import { ContactUsComponent } from './components/static-pages/contact-us/contact-us.component';
 import { PrivacyPolicyComponent } from './components/static-pages/privacy-policy/privacy-policy.component';
 import { TermsConditionComponent } from './components/static-pages/terms-condition/terms-condition.component';
+import { SearchJobComponent } from './components/search-job/search-job.component';
 
+/***Reusable Components***/
+import { PaginatorComponent } from './components/paginator/paginator.component';
+
+/***Routing module***/
 import { AppRouting } from './app.routing';
 
-
-/****
-  Services
-  ****/
+/***Services***/
 import { services } from './services/index';
-// Configs 
+import { SearchFilterComponent } from './components/search-filter/search-filter.component';
+
+/***Configs***/
 export function getAuthServiceConfigs    () {
   let config = new AuthServiceConfig(
       [
@@ -107,6 +111,9 @@ export function getAuthServiceConfigs    () {
     ContactUsComponent,
     PrivacyPolicyComponent,
     TermsConditionComponent,
+    SearchJobComponent,
+    PaginatorComponent,
+    SearchFilterComponent,
   ],
   imports: [
     BrowserModule,

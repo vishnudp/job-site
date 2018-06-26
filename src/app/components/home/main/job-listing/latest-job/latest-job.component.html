@@ -1,22 +1,5 @@
-<!-- Start of Job Post Main -->
-<div class="col-md-8 col-sm-12 col-xs-12 job-post-main">
-    <h2 class="capitalize"><i class="fa fa-briefcase"></i>latest jobs</h2>
+<app-latest-job-list [list]="jobList"></app-latest-job-list>
 
-    <!-- Start of Job Post Wrapper -->
-    <div class="job-post-wrapper mt60">
-    	<app-latest-job-list [list]="list"></app-latest-job-list>
-    </div>
-    <!-- End of Job Post Wrapper -->
-
-    <!-- Start of Pagination -->
-    <ul class="pagination list-inline text-center">
-        <li *ngIf="startPage > 4"><a href="javascript:void(0)" (click)="pre()">Pre</a></li>
-    	<li *ngFor="let data of showPages" [ngClass]="{'active' : selectedPage == data}">
-    		<a href="javascript:void(0)" (click)="selectedPage = data">{{data}}</a>
-    	</li>
-        <li *ngIf="showNext"><a href="javascript:void(0)" (click)="next()">Next</a></li>
-    </ul>
-    <!-- End of Pagination -->
-
-</div>
-<!-- End of Job Post Main -->
+<!-- Start of Pagination -->
+<app-paginator [totalCount]="totalMatchJobs" (changeFilter)="changeFilter($event)"></app-paginator>
+<!-- End of Pagination -->

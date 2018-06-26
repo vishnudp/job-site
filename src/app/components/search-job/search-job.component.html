@@ -1,0 +1,54 @@
+<!-- =============== Start of Page Header 1 Section =============== -->
+<section class="page-header">
+    <div class="container">
+
+        <!-- Start of Page Title -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2>search jobs ver. 1</h2>
+            </div>
+        </div>
+        <!-- End of Page Title -->
+
+        <!-- Start of Breadcrumb -->
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">home</a></li>
+                    <li class="active">for canditates</li>
+                </ul>
+            </div>
+        </div>
+        <!-- End of Breadcrumb -->
+
+    </div>
+</section>
+<!-- =============== End of Page Header 1 Section =============== -->
+
+
+
+<!-- ===== Start of Main Wrapper Section ===== -->
+<section class="search-jobs ptb80">
+    <div class="container">
+
+        <!-- Start of Form -->
+        <app-search-filter (onSearch)="jobReference.search()"></app-search-filter>
+        <!-- End of Form -->
+
+        <!-- Start of Row -->
+        <div class="row mt60">
+            <!-- Start of Job Post Main -->
+            <div class="col-md-12 job-post-main">
+                <h4>We found {{jobReference?.totalMatchJobs}} matches.</h4>
+				<div class="job-post-wrapper mt20">
+					<app-latest-job #jobReference></app-latest-job>
+				</div>
+            </div>
+            <!-- End of Job Post Main -->
+
+        </div>
+        <!-- End of Row -->
+
+    </div>
+</section>
+<!-- ===== End of Main Wrapper Section ===== -->

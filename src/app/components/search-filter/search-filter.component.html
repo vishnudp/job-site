@@ -1,0 +1,23 @@
+<form class="job-search-form row">
+    <!-- Start of keywords input -->
+    <div class="col-md-3 col-sm-12 search-keywords">
+        <label for="search-keywords">Keywords</label>
+        <input type="text" name="search-keywords" class="form-control" [(ngModel)]="searchForm.keyword" id="search-keywords" placeholder="Keywords">
+    </div>
+    <!-- Start of category input -->
+    <div class="col-md-3 col-sm-12 search-categories">
+        <label for="search-categories">Category</label>
+        <select name="search-categories" class="selectpicker" id="search-categories" data-live-search="true" title="Select Category" data-size="5" data-container="body" [(ngModel)]="searchForm.category_id">
+            <option *ngFor="let cat of categoryData" value="{{cat.category_id}}">{{cat.category_name}}</option>
+        </select>
+    </div>
+    <!-- Start of location input -->
+    <div class="col-md-4 col-sm-12 search-location">
+        <label for="search-location">Location</label>
+        <input type="text" name="search-location" id="search-location" class="form-control" [(ngModel)]="searchForm.location" placeholder="Location">
+    </div>
+    <!-- Start of submit input -->
+    <div class="col-md-2 col-sm-12 search-submit">
+        <button type="submit" class="btn btn-blue btn-effect btn-large" (click)="search()"><i class="fa fa-search"></i>search</button>
+    </div>
+</form>

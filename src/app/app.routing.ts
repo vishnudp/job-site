@@ -9,6 +9,7 @@ import { AboutUsComponent } from './components/static-pages/about-us/about-us.co
 import { PrivacyPolicyComponent } from './components/static-pages/privacy-policy/privacy-policy.component';
 import { TermsConditionComponent } from './components/static-pages/terms-condition/terms-condition.component';
 import { ContactUsComponent } from './components/static-pages/contact-us/contact-us.component';
+import { SearchJobComponent } from './components/search-job/search-job.component';
 
 
 let routes : Routes = [
@@ -20,6 +21,7 @@ let routes : Routes = [
 		{path : 'privacy-policy', component : PrivacyPolicyComponent},
 		{path : 'terms-condition', component : TermsConditionComponent},
 		{path : 'contact-us', component : ContactUsComponent},
+		{path : 'search-job', component : SearchJobComponent},
 	]},
 	//{path : 'login', component : LoginComponent, resolve : {loginResolver : LoginResolver}},
 	{path : '**', redirectTo : '' }
