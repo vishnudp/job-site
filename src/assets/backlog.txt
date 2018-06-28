@@ -1,7 +1,7 @@
 Needy API
 1. Create Login and signup api - (LoginComponent, SignupComponent)
 	Login on behalf of token
-2. Search job on behalf of search filter value - LatestJobComponent
+2. Get jobs on behalf of search filter value - LatestJobComponent
 3. Get company profile - CompanyPageComponent
 4. Get job detail - JobPageComponent
 5. Get Testimonial data - TestimonialsComponent

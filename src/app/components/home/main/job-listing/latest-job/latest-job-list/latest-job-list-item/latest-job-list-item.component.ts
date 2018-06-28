@@ -8,11 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LatestJobListItemComponent implements OnInit {
   @Input() item : any;
   class_jobType_obj = {
-	'full time' : 'btn-green',
-	'part time' : 'btn-purple',
-	'freelancer' : 'btn-blue',
-	'intership' : 'btn-orange',
-	'temporary' : 'btn-red'
+  	'full time' : 'btn-green',
+  	'part time' : 'btn-purple',
+  	'freelancer' : 'btn-blue',
+  	'intership' : 'btn-orange',
+  	'temporary' : 'btn-red'
   }
 
   constructor() { }
